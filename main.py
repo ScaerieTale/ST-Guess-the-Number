@@ -1,8 +1,12 @@
 import random
 import sys
+print("""Welcome to ScaerieTale's Numbers Game!  The rules are simple.
+You get either 10, or 5 chances to guess the correct number, depending on
+which difficulty you choose.  Good luck! ♥
+-- Scaerie""")
 def game_loop():
     rng = random.randint(1, 100)
-    guesses = 0
+    guesses = 10
     game_started = False
     while game_started == False:
         difficulty = input("""Easy, Medium, or Hard?
@@ -11,17 +15,15 @@ def game_loop():
         Hard: 5 guesses.
         What shall it be? """).lower()
         if difficulty == "easy":
-            guesses = 10
             game_started = True
             rng = random.randint(1, 50)
         elif difficulty == "medium":
-            guesses = 10
             game_started = True
         elif difficulty == "hard":
             guesses = 5
             game_started = True
         elif difficulty == "spam":
-            guesses == 100
+            guesses == 42
             game_started = True
         else:
             print("I didn't understand that.")
