@@ -1,5 +1,5 @@
 import random
-rng = random.randint(1, 100)
+rng = 50 # random.randint(1, 100)
 guesses = 0
 game_started = False
 while game_started == False:
@@ -14,6 +14,8 @@ while game_started == False:
         print("I didn't understand that.")
 while game_started == True:
     if guesses == 0:
+        break
+    if guesses == 0:
         game_started = False
     player_guess = int(input(f"Guess the number!  You have {guesses} attempts left) "))
     if player_guess > rng:
@@ -24,4 +26,4 @@ while game_started == True:
         print(f"Too low! ({guesses} attempts left)")
     elif player_guess == rng:
         print("Correct!")
-        game_started == False
+        break
